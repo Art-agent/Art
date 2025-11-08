@@ -1,0 +1,37 @@
+{
+  "name": "art",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxt/fonts": "0.12.1",
+    "@reown/appkit": "^1.8.13",
+    "@reown/appkit-adapter-solana": "^1.8.13",
+    "@solana/wallet-adapter-wallets": "^0.19.37",
+    "lucide-vue-next": "^0.553.0",
+    "nuxt": "^4.2.1",
+    "vue": "^3.5.22",
+    "vue-router": "^4.6.3"
+  },
+  "trustedDependencies": [
+    "@parcel/watcher",
+    "@reown/appkit",
+    "bigint-buffer",
+    "blake-hash",
+    "bufferutil",
+    "esbuild",
+    "protobufjs",
+    "tiny-secp256k1",
+    "usb",
+    "utf-8-validate"
+  ],
+  "devDependencies": {
+    "sass": "^1.93.3"
+  }
+}

@@ -1,0 +1,23 @@
+<script setup lang="ts">
+const props = defineProps({
+  height: {
+    type: String,
+    default: "14"
+  },
+  width: {
+    type: String,
+    default: "14"
+  }
+})
+</script>
+
+<template>
+	 <svg :width="props.width" :height="props.height" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="7" cy="7" r="4"/>
+    <path d="M14 7C14 10.866 10.866 14 7 14C3.13401 14 0 10.866 0 7C0 3.13401 3.13401 0 7 0C10.866 0 14 3.13401 14 7ZM2.3793 7C2.3793 9.55194 4.44806 11.6207 7 11.6207C9.55194 11.6207 11.6207 9.55194 11.6207 7C11.6207 4.44806 9.55194 2.3793 7 2.3793C4.44806 2.3793 2.3793 4.44806 2.3793 7Z"/>
+  </svg>
+</template>
+
+<style lang="scss" scoped>
+
+</style>

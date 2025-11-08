@@ -1,0 +1,51 @@
+:root {
+  --color-bg-primary-light: #FAFAFA;
+  --color-bg-primary-dark: #212121;
+  --color-bg-secondary-light: #212121;
+  
+  --color-text-primary-light: #212121;
+  --color-text-primary-dark: #FAFAFA;
+  --color-text-primary-transparent: rgba(33, 33, 33, 0.7);
+  
+  --color-icon-primary: #212121;
+  
+  --color-border: #D9D9D9;
+  
+  --color-button-light: #F3F3F3;
+  --color-button-dark: #212121;
+  --height-button-sm: 32px;
+  --height-button-md: 38px;
+  --height-button-lg: 52px;
+  
+  --padding-vsm: 5px;
+  --padding-sm: 10px;
+  --padding-md: 15px;
+  --padding-lg: 30px;
+  
+  --color-input-light: #F3F3F3;
+  --height-input-lg: 42px;
+  --height-input-md: 32px;
+  
+  --radius-xlg: 32px;
+  --radius-sm: 7.5px;
+  --radius-md: 10px;
+  --radius-lg: 12.5px;
+  --radius-round: 50%;
+  
+  --stroke-width: 1.25px;
+  
+  --letter-spacing: -1px;
+  --font-medium: 500;
+  --font-regular: 400;
+  --font-semibold: 600;
+  
+  --font-size-xlg: 40px;
+  --font-size-lg: 28px;
+  --font-size-md: 16px;
+  --font-size-sm: 13px;
+  
+  --font-family: Space Grotesk, serif;
+  
+  --shadow: 1px 1px 5px 0px rgba(250, 250, 250, 0.25);
+  --inner-shadow: inset 1px 1px 2px 0.1px rgba(0, 0, 0, 0.1);
+}

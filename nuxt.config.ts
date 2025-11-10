@@ -11,9 +11,10 @@ export default defineNuxtConfig({
     public: {
       projectId: process.env.NUXT_PROJECT_ID,
       projectUrl: process.env.NUXT_PROJECT_URL,
-    }
+    },
+    grokApiKey: process.env.GROQ_API_KEY,
   },
-  modules: ['@nuxt/fonts'],
+  modules: ['@nuxt/fonts', '@pinia/nuxt'],
   fonts: {
     defaults: {
       weights: ['300 700'],

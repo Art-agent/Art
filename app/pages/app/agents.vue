@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { Plus } from "lucide-vue-next";
+
 definePageMeta({
   layout: "applayout"
 })
@@ -14,6 +16,13 @@ useSeoMeta({
   	  <h1>Agents</h1>
   		<span>Create and use an art agent for specific tasks</span>
   	</section>
+   <section class="select-agents-container">
+     <Agents />
+     <button class="add-agent-button">
+       <Plus :size="18" class="icon" />
+       <span>Add agent</span>
+     </button>
+   </section>
 	</div>
 </template>
 
@@ -60,6 +69,47 @@ useSeoMeta({
       font-style: normal;
       letter-spacing: var(--letter-spacing);
       margin: 0;
+    }
+  }
+  .select-agents-container {
+    display: flex;
+    width: stretch;
+    justify-content: left;
+    align-items: center;
+    .add-agent-button {
+      all: unset;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 220px;
+      width: 220px;
+      padding: var(--padding-md);
+      border-bottom: 1px dashed var(--color-border);
+      border-right: 1px dashed var(--color-border);
+      transition: 0.2s ease-out;
+      .icon {
+        color: var(--color-text-primary-transparent);
+        stroke-width: var(--stroke-width);
+      }
+      span {
+        color: var(--color-text-primary-transparent);
+        font-family: var(--font-family);
+        font-weight: var(--font-medium);
+        font-style: normal;
+        letter-spacing: var(--letter-spacing);
+        font-size: var(--font-size-sm);
+      }
+      &:active {
+        background: var(--color-bg-primary-dark);
+        border: 0;
+        span {
+          color: var(--color-text-primary-dark);
+        }
+        .icon {
+          color: var(--color-text-primary-dark);
+        }
+      }
     }
   }
 }

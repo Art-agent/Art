@@ -11,11 +11,15 @@
   },
   "dependencies": {
     "@nuxt/fonts": "0.12.1",
+    "@pinia/nuxt": "0.11.3",
     "@reown/appkit": "^1.8.13",
     "@reown/appkit-adapter-solana": "^1.8.13",
     "@solana/wallet-adapter-wallets": "^0.19.37",
+    "grok-sdk": "^0.0.1-security",
+    "groq-sdk": "^0.34.0",
     "lucide-vue-next": "^0.553.0",
     "nuxt": "^4.2.1",
+    "pinia": "^3.0.4",
     "vue": "^3.5.22",
     "vue-router": "^4.6.3"
   },

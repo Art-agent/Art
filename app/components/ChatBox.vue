@@ -3,6 +3,16 @@ import { Plus, AudioLines, ArrowUp } from 'lucide-vue-next';
 
 var query = ref<String>("");
 
+const emit = defineEmits<{
+  (e: 'changeChatStart', value: boolean): void
+}>();
+
+function editChatStart(value: boolean) {
+  emit('changeChatStart', value)
+}
+
+
+
 </script>
 
 <template>

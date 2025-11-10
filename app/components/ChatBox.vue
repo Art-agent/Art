@@ -33,6 +33,8 @@ function editChatStart(value: boolean) {
 </template>
 
 <style lang="scss" scoped>
+@import '~/assets/styles/_media.scss';
+
 .chatbox {
   display: flex;
   background: var(--color-input-light);
@@ -45,6 +47,16 @@ function editChatStart(value: boolean) {
   justify-content: space-between;
   column-gap: 5px;
   box-shadow: var(--inner-shadow);
+
+  @include responsive(tablet) {
+    width: 500px;
+  }
+
+  @include responsive(mobile) {
+    width: 100%;
+    max-width: none;
+    height: var(--height-input-md);
+  }
   
   .plus-button {
     all: unset;
@@ -72,12 +84,20 @@ function editChatStart(value: boolean) {
     font-size: var(--font-size-md);
     font-weight: var(--font-medium);
     letter-spacing: var(--letter-spacing);
+
+    @include responsive(mobile) {
+      font-size: var(--font-size-sm);
+    }
   }
   input::placeholder {
     font-family: var(--font-family);
     font-size: var(--font-size-md);
     font-weight: var(--font-medium);
     letter-spacing: var(--letter-spacing);
+
+    @include responsive(mobile) {
+      font-size: var(--font-size-sm);
+    }
   }
   .send-audio-container {
     height: stretch;

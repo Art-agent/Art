@@ -27,6 +27,8 @@ useSeoMeta({
 </template>
 
 <style lang="scss" scoped>
+@import '~/assets/styles/_media.scss';
+
 .agents-home {
   overflow-y: scroll;
   scrollbar-width: none;
@@ -42,6 +44,12 @@ useSeoMeta({
   align-items: start;
   justify-content: left;
   padding-bottom: var(--padding-lg);
+
+  @include responsive(mobile) {
+    border-left: none;
+    border-right: none;
+    padding-bottom: var(--padding-md);
+  }
   .top-section {
     display: flex;
     width: stretch;
@@ -52,6 +60,12 @@ useSeoMeta({
     row-gap: 5px;
     padding: var(--padding-lg) var(--padding-md) var(--padding-lg) var(--padding-md);
     border-bottom: 1px solid var(--color-border);
+
+    @include responsive(mobile) {
+      min-height: 80px;
+      padding: var(--padding-md) var(--padding-sm);
+    }
+
     h1 {
       font-size: var(--font-size-lg);
       font-family: var(--font-family);
@@ -60,6 +74,10 @@ useSeoMeta({
       letter-spacing: var(--letter-spacing);
       margin: 0;
       color: var(--color-text-primary-light);
+
+      @include responsive(mobile) {
+        font-size: var(--font-size-md);
+      }
     }
     span {
       font-size: var(--font-size-md);
@@ -69,6 +87,10 @@ useSeoMeta({
       font-style: normal;
       letter-spacing: var(--letter-spacing);
       margin: 0;
+
+      @include responsive(mobile) {
+        font-size: var(--font-size-sm);
+      }
     }
   }
   .select-agents-container {
@@ -76,6 +98,14 @@ useSeoMeta({
     width: stretch;
     justify-content: left;
     align-items: center;
+    flex-wrap: wrap;
+    gap: var(--padding-sm);
+
+    @include responsive(mobile) {
+      padding: var(--padding-sm);
+      justify-content: center;
+    }
+
     .add-agent-button {
       all: unset;
       cursor: pointer;
@@ -88,6 +118,12 @@ useSeoMeta({
       border-bottom: 1px dashed var(--color-border);
       border-right: 1px dashed var(--color-border);
       transition: 0.2s ease-out;
+
+      @include responsive(mobile) {
+        height: 180px;
+        width: calc(50% - var(--padding-vsm));
+        min-width: 150px;
+      }
       .icon {
         color: var(--color-text-primary-transparent);
         stroke-width: var(--stroke-width);

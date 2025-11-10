@@ -68,6 +68,8 @@ function openModal() {
 </template>
 
 <style lang="scss" scoped>
+@import '~/assets/styles/_media.scss';
+
 .main-layout {
   height: 100vh;
   background: var(--color-bg-primary-light);
@@ -77,6 +79,12 @@ function openModal() {
     display: flex;
     height: 70px;
     align-items: center;
+
+    @include responsive(mobile) {
+      height: 60px;
+      padding: 0 var(--padding-sm);
+    }
+
     .artlogo {
       height: 70px;
       width: 300px;
@@ -89,12 +97,28 @@ function openModal() {
       align-items: center;
       justify-content: left;
       padding: 0px 0px 0px 20px;
+
+      @include responsive(tablet) {
+        width: 200px;
+        padding: 0px 0px 0px 15px;
+      }
+
+      @include responsive(mobile) {
+        width: auto;
+        border-right: none;
+        padding: 0;
+        height: 60px;
+      }
       .logo-text {
         font-family: var(--font-family);
         font-weight: var(--font-medium);
         letter-spacing: var(--letter-spacing);
         font-size: var(--font-size-lg);
         color: var(--color-text-primary-light);
+
+        @include responsive(mobile) {
+          font-size: var(--font-size-md);
+        }
       }
     }
     .wallet-docs {
@@ -105,6 +129,16 @@ function openModal() {
       display: flex;
       align-items: center;
       justify-content: space-between;
+
+      @include responsive(tablet) {
+        padding: 0px 15px;
+      }
+
+      @include responsive(mobile) {
+        height: 60px;
+        padding: 0px var(--padding-sm);
+        flex: 1;
+      }
       .wallet-container {
         all: unset;
         cursor: pointer;
@@ -118,6 +152,15 @@ function openModal() {
         border-radius: var(--radius-xlg);
         column-gap: 5px;
         transition: 0.2s ease-out;
+
+        @include responsive(mobile) {
+          padding: 0px var(--padding-vsm);
+          height: 28px;
+
+          span {
+            display: none;
+          }
+        }
         .unconnected {
           display: flex;
           fill: var(--color-text-primary-light);
@@ -156,6 +199,15 @@ function openModal() {
           padding: 0px var(--padding-md);
           border-radius: var(--radius-xlg);
           transition: 0.2s ease-out;
+
+          @include responsive(mobile) {
+            padding: 0px var(--padding-sm);
+            height: 28px;
+
+            span {
+              display: none;
+            }
+          }
           .icon {
             color: var(--color-text-primary-dark);
             stroke-width: var(--stroke-width);
@@ -184,6 +236,11 @@ function openModal() {
   .main {
     height: stretch;
     display: flex;
+
+    @include responsive(mobile) {
+      flex-direction: column;
+    }
+
     .horiz-navbar {
       display: flex;
       flex-direction: column;
@@ -192,6 +249,23 @@ function openModal() {
       justify-content: start;
       width: 276px;
       padding: 10px 20px 0px 20px;
+
+      @include responsive(tablet) {
+        width: 220px;
+        padding: 10px 15px 0px 15px;
+      }
+
+      @include responsive(mobile) {
+        width: 100%;
+        flex-direction: row;
+        border-right: none;
+        border-bottom: 1px solid var(--color-border);
+        padding: var(--padding-sm);
+        overflow-x: auto;
+        gap: var(--padding-sm);
+        justify-content: start;
+        align-items: center;
+      }
       .option {
         display: flex;
         align-items: center;
@@ -200,6 +274,13 @@ function openModal() {
         border-radius: var(--radius-md);
         column-gap: var(--padding-md);
         transition: 0.2s ease-in;
+
+        @include responsive(mobile) {
+          flex-shrink: 0;
+          white-space: nowrap;
+          padding: var(--padding-vsm) var(--padding-sm);
+          column-gap: var(--padding-vsm);
+        }
         .icon {
           color: var(--color-text-primary-transparent);
           stroke-width: var(--stroke-width);
@@ -211,6 +292,10 @@ function openModal() {
           font-weight: var(--font-regular);
           font-style: normal;
           letter-spacing: var(--letter-spacing);
+
+          @include responsive(mobile) {
+            font-size: var(--font-size-sm);
+          }
         }
       }
     }
@@ -219,6 +304,15 @@ function openModal() {
       width: stretch;
       margin: 0px 30px;
       /* border: 1px solid blue; */
+
+      @include responsive(tablet) {
+        margin: 0px 20px;
+      }
+
+      @include responsive(mobile) {
+        margin: 0;
+        padding: var(--padding-sm);
+      }
     }
   }
 }

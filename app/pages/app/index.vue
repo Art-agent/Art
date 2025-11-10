@@ -31,6 +31,8 @@ function changeChatBoxPosition() {
 </template>
 
 <style lang="scss" scoped>
+@import '~/assets/styles/_media.scss';
+
 .app-home {
   min-height: stretch;
   border-left: 1px solid var(--color-border);
@@ -43,8 +45,26 @@ function changeChatBoxPosition() {
   justify-content: center;
   padding-bottom: var(--padding-lg);
   transition: 0.2s ease-out;
+
+  @include responsive(tablet) {
+    padding-bottom: var(--padding-md);
+  }
+
+  @include responsive(mobile) {
+    border-left: none;
+    border-right: none;
+    padding-bottom: var(--padding-sm);
+    min-height: calc(100vh - 180px);
+  }
+
   .chatbox {
     transition: 0.2s ease-out;
+    width: 100%;
+    max-width: 800px;
+
+    @include responsive(mobile) {
+      max-width: 100%;
+    }
   }
 }
 </style>

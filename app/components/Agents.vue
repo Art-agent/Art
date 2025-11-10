@@ -14,6 +14,8 @@
 </template>
 
 <style lang="scss" scoped>
+@import '~/assets/styles/_media.scss';
+
 .agent {
   all: unset;
   cursor: pointer;
@@ -25,6 +27,18 @@
   flex-direction: column;
   justify-content: space-between;
   padding: var(--padding-md);
+
+  @include responsive(tablet) {
+    height: 200px;
+    width: 200px;
+  }
+
+  @include responsive(mobile) {
+    height: 180px;
+    width: calc(50% - var(--padding-vsm));
+    min-width: 150px;
+    padding: var(--padding-sm);
+  }
   .agent-header {
     display: flex;
     /* border: 1px solid black; */
@@ -34,6 +48,10 @@
       font-style: normal;
       letter-spacing: var(--letter-spacing);
       font-size: var(--font-size-lg);
+
+      @include responsive(mobile) {
+        font-size: var(--font-size-md);
+      }
     }
   }
   .agent-desc {
@@ -48,6 +66,10 @@
       font-style: normal;
       letter-spacing: var(--letter-spacing);
       font-size: var(--font-size-md);
+
+      @include responsive(mobile) {
+        font-size: var(--font-size-sm);
+      }
     }
   }
 }

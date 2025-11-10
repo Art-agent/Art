@@ -25,6 +25,8 @@ useSeoMeta({
 </template>
 
 <style lang="scss" scoped>
+@import '~/assets/styles/_media.scss';
+
 .transaction-home {
   overflow-y: scroll;
   scrollbar-width: none;
@@ -40,6 +42,13 @@ useSeoMeta({
   align-items: start;
   justify-content: left;
   padding-bottom: var(--padding-lg);
+
+  @include responsive(mobile) {
+    border-left: none;
+    border-right: none;
+    padding-bottom: var(--padding-md);
+  }
+
   .top-section {
     display: flex;
     width: stretch;
@@ -50,6 +59,11 @@ useSeoMeta({
     row-gap: 5px;
     padding: var(--padding-lg) var(--padding-md) var(--padding-lg) var(--padding-md);
     border-bottom: 1px solid var(--color-border);
+
+    @include responsive(mobile) {
+      padding: var(--padding-md) var(--padding-sm) var(--padding-md) var(--padding-sm);
+    }
+
     h1 {
       font-size: var(--font-size-lg);
       font-family: var(--font-family);
@@ -58,6 +72,10 @@ useSeoMeta({
       letter-spacing: var(--letter-spacing);
       margin: 0;
       color: var(--color-text-primary-light);
+
+      @include responsive(mobile) {
+        font-size: var(--font-size-md);
+      }
     }
     span {
       font-size: var(--font-size-md);
@@ -67,6 +85,10 @@ useSeoMeta({
       font-style: normal;
       letter-spacing: var(--letter-spacing);
       margin: 0;
+
+      @include responsive(mobile) {
+        font-size: var(--font-size-sm);
+      }
     }
   }
   .history-select-section {
@@ -78,6 +100,11 @@ useSeoMeta({
     padding: 0px var(--padding-md) 0px var(--padding-md);
     align-items: center;
     justify-content: left;
+
+    @include responsive(mobile) {
+      padding: 0px var(--padding-sm) 0px var(--padding-sm);
+    }
+
     button {
       all: unset;
       cursor: pointer;
@@ -92,6 +119,10 @@ useSeoMeta({
         font-weight: var(--font-regular);
         font-style: normal;
         letter-spacing: var(--letter-spacing);
+
+        @include responsive(mobile) {
+          font-size: var(--font-size-sm);
+        }
       }
     }
   }

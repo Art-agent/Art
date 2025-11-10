@@ -19,5 +19,6 @@ export default defineEventHandler(async (event) => {
       },
     ],
     model: "openai/gpt-oss-20b",
+    stream: true,
   });
 })

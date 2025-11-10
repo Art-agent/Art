@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import storageClient from '~/utils/storageClient';
 definePageMeta({
   layout: "applayout"
 })
@@ -10,9 +11,12 @@ useSeoMeta({
 const appHome = ref<HTMLDivElement | null>(null);
 const chatStart = ref<boolean>(false);
 
-if (chatStart !== null) {
-  chatStart.value = true;
-}
+const { addChatMessage, getChatHistory, setChatHistory, clearChatHistory } = storageClient();
+
+
+watch(chatStart, () => {
+  changeChatBoxPosition();
+}, { immediate: true })
 
 function changeChatBoxPosition() {
   if (!appHome.value) return

@@ -18,6 +18,11 @@ useSeoMeta({
   	</section>
    <section class="select-agents-container">
      <Agents />
+     <Agents />
+     <button class="add-agent-button border-rt">
+       <Plus :size="18" class="icon" />
+       <span>Add agent</span>
+     </button>
      <button class="add-agent-button">
        <Plus :size="18" class="icon" />
        <span>Add agent</span>
@@ -82,11 +87,11 @@ useSeoMeta({
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 220px;
-      width: 220px;
+      height: 230px;
+      width: 230px;
       padding: var(--padding-md);
       border-bottom: 1px dashed var(--color-border);
-      border-right: 1px dashed var(--color-border);
+      /* border-right: 1px dashed var(--color-border); */
       transition: 0.2s ease-out;
       .icon {
         color: var(--color-text-primary-transparent);
@@ -102,7 +107,7 @@ useSeoMeta({
       }
       &:active {
         background: var(--color-bg-primary-dark);
-        border: 0;
+        /* border: 0; */
         span {
           color: var(--color-text-primary-dark);
         }
@@ -110,6 +115,9 @@ useSeoMeta({
           color: var(--color-text-primary-dark);
         }
       }
+    }
+    .border-rt {
+      border-right: 1px dashed var(--color-border);
     }
   }
 }

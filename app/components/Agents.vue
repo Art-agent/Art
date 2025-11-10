@@ -1,14 +1,25 @@
 <script setup lang="ts">
 
+const props = defineProps({
+  header: {
+    type: String,
+    default: "Art Agent"
+  },
+  desc: {
+    type: String,
+    default: "Art agent created to help users do a specific task in a timely and orderly manner"
+  }
+});
+
 </script>
 
 <template>
 	<button class="agent">
 		<section class="agent-header">
-		  <span>First Agent</span>
+		  <span>{{ props.header }}</span>
 		</section>
 		<section class="agent-desc">
-		  <span>The first agent created to help users do a specific task in a timely and orderly manner</span>
+		  <span>{{ props.desc }}</span>
 		</section>
 	</button>
 </template>
@@ -19,12 +30,13 @@
   cursor: pointer;
   border-right: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
-  height: 220px;
-  width: 220px;
+  height: 230px;
+  width: 230px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: var(--padding-md);
+  transition: 0.2s ease-out;
   .agent-header {
     display: flex;
     /* border: 1px solid black; */
@@ -48,6 +60,19 @@
       font-style: normal;
       letter-spacing: var(--letter-spacing);
       font-size: var(--font-size-md);
+    }
+  }
+  &:active {
+    background: var(--color-bg-primary-dark);
+    .agent-header {
+      span {
+        color: var(--color-text-primary-dark);
+      }
+    }
+    .agent-desc {
+      span {
+        color: var(--color-text-primary-dark);
+      }
     }
   }
 }

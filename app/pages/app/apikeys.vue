@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Plus } from "lucide-vue-next";
 definePageMeta({
   layout: "applayout"
 })
@@ -14,6 +15,15 @@ useSeoMeta({
   	  <h1>API Keys</h1>
   		<span>Create and manage your art api keys</span>
   	</section>
+   <section class="create-api-section">
+		  <section class="api-desc-section">
+				  <span>Create and manage your API keys</span>
+				</section>
+			<button class="select-button">
+			  <Plus :size="18" class="icon" />
+			  <span>Create API key</span>
+			</button>
+		</section>
 	</div>
 </template>
 
@@ -60,6 +70,67 @@ useSeoMeta({
       font-style: normal;
       letter-spacing: var(--letter-spacing);
       margin: 0;
+    }
+  }
+  .create-api-section {
+    display: flex;
+    column-gap: 10px;
+    height: var(--height-button-lg);
+    width: stretch;
+    border-bottom: 1px solid var(--color-border);
+    padding: 0px var(--padding-md) 0px var(--padding-md);
+    align-items: center;
+    justify-content: space-between;
+    .api-desc-section {
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      span {
+        font-family: var(--font-family);
+        font-size: var(--font-size-md);
+        font-weight: var(--font-regular);
+        font-style: normal;
+        letter-spacing: var(--letter-spacing);
+      }
+    }
+    button {
+      all: unset;
+      cursor: pointer;
+      height: var(--height-button-sm);
+      background: var(--color-bg-primary-dark);
+      width: fit-content;
+      padding: 0px var(--padding-md);
+      border-radius: var(--radius-xlg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 5px;
+      transition: 0.2s ease-out;
+      .icon {
+        color: var(--color-text-primary-dark);
+        stroke-width: var(--stroke-width);
+      }
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-family);
+        font-size: var(--font-size-md);
+        font-weight: var(--font-regular);
+        font-style: normal;
+        letter-spacing: var(--letter-spacing);
+        color: var(--color-text-primary-dark);
+      }
+      &:active {
+        background: var(--color-bg-primary-light);
+        border: 1px solid var(--color-border);
+        .icon {
+          color: var(--color-text-primary-light);
+        }
+        span {
+          color: var(--color-text-primary-light);
+        }
+      }
     }
   }
 }

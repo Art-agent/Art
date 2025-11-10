@@ -86,6 +86,9 @@ useSeoMeta({
       width: fit-content;
       padding: 0px var(--padding-sm) 0px var(--padding-sm);
       border-radius: var(--radius-xlg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       span {
         font-family: var(--font-family);
         font-size: var(--font-size-md);

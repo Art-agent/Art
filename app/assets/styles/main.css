@@ -1,3 +1,23 @@
 html, body {
   margin: 0;
 }
+
+.artresponse :deep(*) {
+  all: revert !important; /* kill every browser default */
+  font-family: var(--font-family) !important;
+  font-size: var(--font-size-md) !important;
+  letter-spacing: var(--letter-spacing) !important;
+  line-height: 1.58 !important;
+  color: var(--color-text-primary) !important;
+}
+
+/* Code blocks stay monospace but still respect your mono stack */
+.artresponse :deep(pre),
+.artresponse :deep(code) {
+  font-family: ui-monospace, 'JetBrains Mono', 'Fira Code', Menlo, Monaco, Consolas, monospace !important;
+}
+
+/* Tables don’t look like dogshit anymore */
+.artresponse :deep(table) {
+  font-size: 0.94em !important;
+}

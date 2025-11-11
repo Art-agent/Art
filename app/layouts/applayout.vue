@@ -73,6 +73,8 @@ function openModal() {
   background: var(--color-bg-primary-light);
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  scrollbar-width: none;
   .vert-navbar {
     display: flex;
     height: 70px;

@@ -1,5 +1,11 @@
 <script setup lang="ts">
 
+const router = useRouter();
+
+function openAgentPage(url: String) {
+  router.push(`agents/${url}`)
+}
+
 const props = defineProps({
   header: {
     type: String,
@@ -14,7 +20,7 @@ const props = defineProps({
 </script>
 
 <template>
-	<button class="agent">
+	<button class="agent" @click="openAgentPage(props.header)">
 		<section class="agent-header">
 		  <span>{{ props.header }}</span>
 		</section>

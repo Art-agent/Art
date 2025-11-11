@@ -10,7 +10,7 @@ const CHAT_KEY = 'artappchat_history'
 
 export default function() {
   
-  const getChatHistory = async (agentId: String): Promise<ChatMessage[]|[]> => {
+  const getChatHistory = async (agentId: String): Promise<ChatMessage[]> => {
     const chatHistory = await storage.getItem<ChatMessage[]>(`${CHAT_KEY}:${agentId}`) || [];
     return chatHistory
   }
@@ -21,12 +21,12 @@ export default function() {
     await storage.setItem(`${CHAT_KEY}:${agentId}`, messages);
   }
   
-  const clearChatHistory = async(): Promise<void> => {
-    await storage.removeItem(CHAT_KEY)
+  const clearChatHistory = async(agentId: String): Promise<void> => {
+    await storage.removeItem(`${CHAT_KEY}:${agentId}`)
   }
   
-  const setChatHistory = async (messages: ChatMessage[]): Promise<void> => {
-    await storage.setItem(CHAT_KEY, messages);
+  const setChatHistory = async (agentId: String, messages: ChatMessage[]): Promise<void> => {
+    await storage.setItem(`${CHAT_KEY}:${agentId}`, messages);
   }
   
   return {

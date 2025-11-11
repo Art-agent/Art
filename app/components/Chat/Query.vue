@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import storageClient from '~/utils/storageClient';
+
+const { addChatMessage, getChatHistory, setChatHistory, clearChatHistory } = storageClient();
 
 </script>
 

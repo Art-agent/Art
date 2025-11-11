@@ -17,27 +17,29 @@ useSeoMeta({
   		<span>Create and use an art agent for specific tasks</span>
   	</section>
    <section class="select-agents-container">
-     <Agents />
-     <Agents />
-     <button class="add-agent-button border-rt">
-       <Plus :size="18" class="icon" />
-       <span>Add agent</span>
-     </button>
-     <button class="add-agent-button">
-       <Plus :size="18" class="icon" />
-       <span>Add agent</span>
-     </button>
+    <Agents 
+      header="Earner"
+      desc="Get instant earnings summaries, even from paywalled sources"
+    />
+    <Agents 
+      header="DeFi Detective" 
+      desc="Find hidden gems before they 100x with onchain proof"
+    />
+    <Agents 
+      header="The Oracle" 
+      desc="Ask anything on-chain and pay only for the data you use"
+    />
+    <button class="add-agent-button border-rt">
+      <Plus :size="18" class="icon" />
+      <span>Add agent</span>
+    </button>
    </section>
 	</div>
 </template>
 
 <style lang="scss" scoped>
 .agents-home {
-  overflow-y: scroll;
-  scrollbar-width: none;
-  -webkit-scrollbar-width: none;
-  min-height: stretch;
-  max-height: stretch;
+  height: 100vh;
   border-left: 1px solid var(--color-border);
   border-right: 1px solid var(--color-border);
   border-top: 0;
@@ -47,6 +49,8 @@ useSeoMeta({
   align-items: start;
   justify-content: left;
   padding-bottom: var(--padding-lg);
+  overflow-y: hidden;
+  scrollbar-width: none;
   .top-section {
     display: flex;
     width: stretch;
@@ -77,10 +81,12 @@ useSeoMeta({
     }
   }
   .select-agents-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     width: stretch;
-    justify-content: left;
-    align-items: center;
+    /* justify-content: left;
+    align-items: center; */
+    overflow: hidden;
     .add-agent-button {
       all: unset;
       cursor: pointer;
